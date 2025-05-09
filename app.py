@@ -1,4 +1,3 @@
-code = '''
 import streamlit as st
 from PIL import Image
 
@@ -41,14 +40,6 @@ def determine_condition(q1, q2, q3):
 
 # Step 3: Product suggestions
 def get_product_recommendations(condition):
-    base = {
-        "Cleanser": "",
-        "Toner": "",
-        "Moisturizer": "",
-        "Sunscreen": "",
-        "Tan Removal": ""
-    }
-
     if condition == "Dry Skin":
         return {
             "Cleanser": "Aqualogica Hydrate+ Cleanser with Coconut Water & Hyaluronic Acid",
@@ -101,26 +92,3 @@ if st.button("💡 Get My Skin Analysis & Products"):
         st.markdown(f"**{category}:** {product}")
 
     st.markdown("💖 Take care of your skin, stay consistent, and always use sunscreen! If anything feels off, consult a dermatologist. You're doing great!")
-
-
-'''
-with open("app.py", "w") as f:
-    f.write(code)
-#!streamlit run app.py &>/content/log.txt &
-from pyngrok import ngrok
-import time
-
-ngrok.set_auth_token("2vIOHUW1Cq3bZf9vHjvvqNAyg6l_72e7H7MJhkYsWqs8DW9ou")  # <--- add this
-
-# Kill any existing tunnels
-ngrok.kill()
-
-# Open a new tunnel
-public_url = ngrok.connect(8501)
-print(f"🌐 Public URL: {public_url}")
-
-# Run Streamlit
-#!streamlit run app.py &>/content/log.txt &
-
-time.sleep(5)
-#!tail -n 10 /content/log.txt
