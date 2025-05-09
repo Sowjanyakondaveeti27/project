@@ -106,7 +106,6 @@ if st.button("💡 Get My Skin Analysis & Products"):
 '''
 with open("app.py", "w") as f:
     f.write(code)
-!pkill -9 streamlit
 !streamlit run app.py &>/content/log.txt &
 from pyngrok import ngrok
 import time
