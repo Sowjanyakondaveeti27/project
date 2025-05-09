@@ -123,4 +123,4 @@ print(f"🌐 Public URL: {public_url}")
 #!streamlit run app.py &>/content/log.txt &
 
 time.sleep(5)
-!tail -n 10 /content/log.txt
+#!tail -n 10 /content/log.txt
