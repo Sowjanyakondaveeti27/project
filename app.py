@@ -1,4 +1,3 @@
-!pip install streamlit pyngrok
 code = '''
 import streamlit as st
 from PIL import Image
