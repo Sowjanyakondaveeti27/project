@@ -106,7 +106,7 @@ if st.button("💡 Get My Skin Analysis & Products"):
 '''
 with open("app.py", "w") as f:
     f.write(code)
-!streamlit run app.py &>/content/log.txt &
+#!streamlit run app.py &>/content/log.txt &
 from pyngrok import ngrok
 import time
 
@@ -120,7 +120,7 @@ public_url = ngrok.connect(8501)
 print(f"🌐 Public URL: {public_url}")
 
 # Run Streamlit
-!streamlit run app.py &>/content/log.txt &
+#!streamlit run app.py &>/content/log.txt &
 
 time.sleep(5)
 !tail -n 10 /content/log.txt
